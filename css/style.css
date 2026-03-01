@@ -48,6 +48,8 @@
 # Margin Bottom
 # Custom margin Padding
 
+# Embed ifame Google Map
+
 ============================================================= */
 /* -------------------------------------
     Google fonts
@@ -12934,6 +12936,24 @@ input.cart-plus-minus-box {
     font-size: 14px; }
   [type="submit"].btn {
     padding: 12px 30px; } }
+
+/* -------------------------------------
+    Embed ifame Google Map
+------------------------------------- */
+  .map-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* Tỷ lệ khung hình 16:9 */
+      height: 0;
+      overflow: hidden; }
+  .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+      border: 0;}
+
 
 /* ----------------------------------------------------
     END
