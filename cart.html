@@ -49,6 +49,148 @@
             text-align: left !important;
             padding-left: 0.5rem !important;
         }
+
+        /* Cart Hover Dropdown Styles */
+        .cart-hover-wrapper {
+            position: relative;
+        }
+
+        .cart-hover-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 320px;
+            background: white;
+            border: 1px solid #e8e8e8;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-top: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .cart-hover-wrapper:hover .cart-hover-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .cart-dropdown-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-items-list {
+            max-height: 280px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+            padding-right: 8px;
+        }
+
+        .cart-items-list::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .cart-items-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .cart-items-list::-webkit-scrollbar-thumb {
+            background: #bbb;
+            border-radius: 3px;
+        }
+
+        .cart-items-list::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+
+        .cart-item-hover {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 13px;
+        }
+
+        .cart-item-hover:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-header {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+            white-space: normal;
+            word-wrap: break-word;
+            flex: 1;
+        }
+
+        .item-quantity {
+            color: #666;
+            margin: 0;
+            flex: 1;
+        }
+
+        .item-quantity span {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .item-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-top: 3px;
+        }
+
+        .item-price {
+            color: #e96656;
+            font-weight: 600;
+            margin: 0;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .cart-dropdown-total {
+            padding-top: 12px;
+            border-top: 2px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .total-label {
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .total-amount {
+            color: #e96656;
+            font-weight: 700;
+            margin: 0;
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -155,7 +297,7 @@
                                 </li>
                                 <li>
                                     <!-- mini-cart 2 -->
-                                    <div class="mini-cart-icon mini-cart-icon-2">
+                                    <div class="mini-cart-icon mini-cart-icon-2 cart-hover-wrapper">
                                         <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
                                             <span class="mini-cart-icon">
                                                 <i class="icon-handbag"></i>
@@ -163,6 +305,47 @@
                                             </span>
                                             <h6><span>Giỏ hàng</span> <span class="ltn__secondary-color">1.735.000</span></h6>
                                         </a>
+                                        <!-- Cart Hover Dropdown -->
+                                        <div class="cart-hover-dropdown">
+                                            <div class="cart-dropdown-content">
+                                                <div class="cart-items-list">
+                                                    <div class="cart-item-hover">
+                                                        <div class="cart-item-header">
+                                                            <img src="img/product/1.png" alt="Tuổi Mộng Mơ" class="cart-item-img">
+                                                            <p class="item-name">Tuổi Mộng Mơ - 5235</p>
+                                                        </div>
+                                                        <div class="item-info-row">
+                                                            <p class="item-quantity">Số lượng: <span>1</span></p>
+                                                            <p class="item-price">200.000</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart-item-hover">
+                                                        <div class="cart-item-header">
+                                                            <img src="img/product/2.png" alt="Mini flower vase" class="cart-item-img">
+                                                            <p class="item-name">Mini flower vase 05 - 12477</p>
+                                                        </div>
+                                                        <div class="item-info-row">
+                                                            <p class="item-quantity">Số lượng: <span>1</span></p>
+                                                            <p class="item-price">400.000</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart-item-hover">
+                                                        <div class="cart-item-header">
+                                                            <img src="img/product/3.png" alt="Starlight" class="cart-item-img">
+                                                            <p class="item-name">Starlight - 16106</p>
+                                                        </div>
+                                                        <div class="item-info-row">
+                                                            <p class="item-quantity">Số lượng: <span>1</span></p>
+                                                            <p class="item-price">950.000</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-dropdown-total">
+                                                    <p class="total-label">Tổng cộng:</p>
+                                                    <p class="total-amount">1.735.000</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </li>
                                 <li>      
