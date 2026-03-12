@@ -12354,6 +12354,9 @@ input.cart-plus-minus-box {
   margin-bottom: 30px;
   font-weight: 600; }
 
+.current-year {
+  font-weight: 300; ; }
+
 .ltn__footer-2 .footer-widget .ltn__blog-meta li,
 .footer-widget .ltn__blog-meta li {
   font-size: 14px; }
