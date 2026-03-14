@@ -39,6 +39,8 @@
 35. Parallax active
 36. Header menu sticky
 
+37. IFRAME GOOGLE
+38. XỬ LÝ TRANG GIỎ HÀNG (CART.HTML)
 
 
 ======================================
@@ -1129,7 +1131,7 @@
         /* --------------------------------------------------------
             33. Quantity plus minus
         -------------------------------------------------------- */
-        $(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');
+        /*$(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');
         $(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');
         $(".qtybutton").on("click", function() {
             var $button = $(this);
@@ -1146,6 +1148,25 @@
                 }
             }
             $button.parent().find("input").val(newVal);
+        });*/
+
+        $(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');
+        $(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');
+
+        $(".qtybutton").on("click", function() {
+            var $button = $(this);
+            var $input = $button.parent().find("input");
+            var oldValue = parseFloat($input.val()) || 0; // Nếu input trống thì mặc định là 0
+
+            var newVal;
+            if ($button.hasClass("inc")) {
+                newVal = oldValue + 1;
+            } else {
+                // Đảm bảo không giảm xuống dưới 0 (hoặc 1 tùy bạn)
+                newVal = (oldValue > 0) ? oldValue - 1 : 0;
+            }
+
+            $input.val(newVal);
         });
 
 
@@ -1348,10 +1369,328 @@
             preLoder.fadeOut(1000);
 
         };
-
-
     });
 
+/* --------------------------------------------------------
+        37. CART MINI CÁC TRANG
+    -------------------------------------------------------- */
+function renderMiniCart() {
+    const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const miniCartList = document.getElementById('mini-cart-list');
+    const miniCartTotal = document.getElementById('mini-cart-total'); // Tổng trong thanh slide-out
+    
+    // Các selector mới cho Header
+    const cartCountIcons = document.querySelectorAll('.cart-quantity-count');
+    const headerTotalPrices = document.querySelectorAll('.cart-total-price');
 
-  
+    if (!miniCartList) return;
+
+    miniCartList.innerHTML = ''; 
+    let total = 0;
+    let count = 0;
+
+    cart.forEach(item => {
+        total += item.price * item.quantity;
+        count += item.quantity;
+
+        miniCartList.innerHTML += `
+            <li>
+                <div class="mini-cart-item clearfix">
+                    <div class="mini-cart-img">
+                        <a href="#"><img src="${item.image}" alt="Image"></a>
+                    </div>
+                    <div class="mini-cart-info">
+                        <h6><a href="#">${item.name}</a></h6>
+                        <span class="mini-cart-quantity">${item.quantity} x ${item.price.toLocaleString('vi-VN')} đ</span>
+                    </div>
+                </div>
+            </li>
+        `;
+    });
+
+    // 1. Cập nhật tổng tiền ở thanh Slide-out (giỏ hàng bên phải)
+    if (miniCartTotal) miniCartTotal.innerText = total.toLocaleString('vi-VN') + ' đ';
+
+    // 2. Cập nhật số lượng trên icon giỏ hàng (Header)
+    cartCountIcons.forEach(icon => {
+        icon.innerText = count;
+    });
+
+    // 3. Cập nhật số tiền hiển thị ở Header
+    headerTotalPrices.forEach(el => {
+        el.innerText = total.toLocaleString('vi-VN') + ' đ';
+    });
+}
+
+// Gọi hàm khi trang web tải xong
+document.addEventListener('DOMContentLoaded', renderMiniCart);
+
+// Đồng bộ trang cart đến mini cart ở các trang khác
+function removeFromCart(name) {
+    // ... code xóa logic cũ ...
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+    
+    renderCart();          // Cập nhật bảng trang cart.html
+    updateMiniCartDisplay(); // Cập nhật con số trên Header
+}
+
+
+/* --------------------------------------------------------
+    38. XỬ LÝ TRANG GIỎ HÀNG (CART.HTML)
+-------------------------------------------------------- */
+
+/* function renderCartPage() {
+    const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartTableBody = document.getElementById('cart-table-body');
+    const cartSubtotal = document.getElementById('cart-subtotal');
+    const cartFinalTotal = document.getElementById('cart-final-total');
+
+    if (!cartTableBody) return; // Nếu không phải trang cart.html thì thoát
+
+    if (cart.length === 0) {
+        cartTableBody.innerHTML = '<tr><td colspan="6" class="text-center">Giỏ hàng của bạn đang trống!</td></tr>';
+        if(cartSubtotal) cartSubtotal.innerText = '0 đ';
+        if(cartFinalTotal) cartFinalTotal.innerText = '0 đ';
+        return;
+    }
+
+    let html = '';
+    let grandTotal = 0;
+
+    cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        grandTotal += itemTotal;
+
+        html += `
+            <tr>
+                <td class="cart-product-remove" onclick="deleteCartItem(${index})">x</td>
+                <td class="cart-product-image">
+                    <a href="product-details.html"><img src="${item.image}" alt="#"></a>
+                </td>
+                <td class="cart-product-info">
+                    <h6><a href="product-details.html">${item.name}</a></h6>
+                </td>
+                <td class="cart-product-price">${item.price.toLocaleString('vi-VN')} đ</td>
+                <td class="cart-product-quantity">
+                    <div class="cart-plus-minus">
+                        <div class="dec qtybutton" onclick="updateQty(${index}, -1)">-</div>
+                        <input type="text" value="${item.quantity}" readonly class="cart-plus-minus-box">
+                        <div class="inc qtybutton" onclick="updateQty(${index}, 1)">+</div>
+                    </div>
+                </td>
+                <td class="cart-product-subtotal">${itemTotal.toLocaleString('vi-VN')} đ</td>
+            </tr>
+        `;
+    });
+
+    cartTableBody.innerHTML = html;
+    cartSubtotal.innerText = grandTotal.toLocaleString('vi-VN') + ' đ';
+    cartFinalTotal.innerText = grandTotal.toLocaleString('vi-VN') + ' đ';
+    
+    // Cập nhật luôn mini cart trên header
+    if (typeof renderMiniCart === 'function') renderMiniCart();
+}
+
+// Hàm tăng giảm số lượng
+window.updateQty = function(index, change) {
+    let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+    cart[index].quantity += change;
+
+    if (cart[index].quantity < 1) cart[index].quantity = 1;
+
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+    renderCartPage(); // Vẽ lại bảng và tính lại tiền ngay lập tức
+};
+
+// Hàm xóa sản phẩm
+window.deleteCartItem = function(index) {
+    let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+    cart.splice(index, 1); // Xóa 1 phần tử tại vị trí index
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+    renderCartPage(); // Vẽ lại bảng
+};
+
+// Khởi chạy khi trang load
+document.addEventListener('DOMContentLoaded', renderCartPage); */
+
+
+// 1. Hàm vẽ (render) giỏ hàng ra giao diện
+function renderCart() {
+    let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartTableBody = document.getElementById('cart-table-body'); // Khớp với ID trong HTML
+    if (!cartTableBody) return;
+
+    cartTableBody.innerHTML = ''; // Dọn sạch dữ liệu cũ
+    let subtotal = 0;
+
+    if (cart.length === 0) {
+        cartTableBody.innerHTML = '<tr><td colspan="6" class="text-center">Giỏ hàng của bạn đang trống!</td></tr>';
+    } else {
+        cart.forEach(function(item, index) {
+            let itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+
+            let trHTML = `
+                <tr>
+                    <td class="cart-product-remove" data-name="${item.name}" style="cursor:pointer">x</td>
+                    <td class="cart-product-image">
+                        <a href="product-details.html"><img src="${item.image}" alt="${item.name}"></a>
+                    </td>
+                    <td class="cart-product-info">
+                        <h4><a href="product-details.html">${item.name}</a></h4>
+                    </td>
+                    <td class="cart-product-price">${item.price.toLocaleString('vi-VN')} đ</td>
+                    <td class="cart-product-quantity">
+                        <input type="number" value="${item.quantity}" 
+                            class="update-qty" 
+                            data-name="${item.name}" min="1" style="width: 60px; text-align: center;">
+                    </td>
+                    <td class="cart-product-subtotal">${itemTotal.toLocaleString('vi-VN')} đ</td>
+                </tr>
+            `;
+            cartTableBody.innerHTML += trHTML;
+        });
+    }
+
+    // 2. Logic tính Phí vận chuyển
+    let shippingFee = 0;
+    const freeShipLimit = 1000000; // Ngưỡng 1.000.000 đ
+    const standardShipping = 30000; // Phí ship 30.000 đ
+    const messageElement = document.getElementById('freeship-message');
+
+    if (subtotal > 0 && subtotal <= freeShipLimit) {
+        shippingFee = standardShipping;
+        if (messageElement) {
+            let remain = freeShipLimit - subtotal;
+            messageElement.innerText = `Mua thêm ${remain.toLocaleString('vi-VN')} đ để được Miễn phí vận chuyển!`;
+        }
+    } else if (subtotal > freeShipLimit) {
+        shippingFee = 0;
+        if (messageElement) {
+            messageElement.innerText = "Đơn hàng của bạn được Miễn phí vận chuyển.";
+            messageElement.style.color = "#28a745"; // Đổi màu xanh cho thông báo thành công
+        }
+    } else {
+        if (messageElement) messageElement.innerText = "";
+    }
+
+    // 3. Cập nhật các con số tổng kết
+    const subtotalEl = document.getElementById('cart-subtotal');
+    const shippingEl = document.getElementById('cart-shipping');
+    const finalTotalEl = document.getElementById('cart-final-total');
+
+    if (subtotalEl) subtotalEl.innerText = subtotal.toLocaleString('vi-VN') + ' đ';
+    if (shippingEl) shippingEl.innerText = shippingFee.toLocaleString('vi-VN') + ' đ';
+    if (finalTotalEl) finalTotalEl.innerText = (subtotal + shippingFee).toLocaleString('vi-VN') + ' đ';
+
+    // Kích hoạt các sự kiện sau khi vẽ xong
+    setupDeleteButtons();
+    setupQuantityChanges();
+    
+    // Cập nhật mini cart ở Header (nếu có hàm renderMiniCart trong main.js)
+    if (typeof renderMiniCart === 'function') {
+        renderMiniCart();
+    }
+}
+
+// Hàm xử lý cập nhật số lượng
+function setupQuantityChanges() {
+    const qtyInputs = document.querySelectorAll('.update-qty');
+    qtyInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            const newQty = parseInt(this.value);
+            const nameToUpdate = this.getAttribute('data-name');
+
+            if (newQty < 1 || isNaN(newQty)) {
+                alert("Số lượng không hợp lệ!");
+                renderCart();
+                return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let product = cart.find(item => item.name === nameToUpdate);
+            if (product) {
+                product.quantity = newQty;
+                localStorage.setItem('cartItems', JSON.stringify(cart));
+                renderCart();
+            }
+        });
+    });
+}
+
+// Hàm xử lý xóa sản phẩm
+function setupDeleteButtons() {
+    const removeButtons = document.querySelectorAll('.cart-product-remove');
+    removeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const nameToRemove = this.getAttribute('data-name');
+            let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cart = cart.filter(item => item.name !== nameToRemove);
+            localStorage.setItem('cartItems', JSON.stringify(cart));
+            renderCart();
+        });
+    });
+}
+
+// Khởi chạy khi trang tải xong
+document.addEventListener('DOMContentLoaded', renderCart);
+
+
+/* --------------------------------------------------------
+    38. XỬ LÝ TRANG PRODUCT DETAILS (PRODUCT-DETAILS.HTML)
+-------------------------------------------------------- */
+
+/* --------------------------------------------------------
+    38. XỬ LÝ TRANG PRODUCT DETAILS (PRODUCT-DETAILS.HTML)
+-------------------------------------------------------- */
+
+// Tìm nút "THÊM VÀO GIỎ"
+const addToCartBtn = document.querySelector('.d-add-to-cart');
+
+if (addToCartBtn) {
+    addToCartBtn.addEventListener('click', function(event) {
+        event.preventDefault(); // Ngăn trang web tải lại hoặc nhảy link
+
+        // 1. Thu thập thông tin sản phẩm
+        const productName = document.querySelector('.modal-product-info h3').innerText;
+        const priceText = document.querySelector('.product-price span').innerText;
+        const productPrice = parseInt(priceText.replace(/[^0-9]/g, '')); 
+        const productQuantity = parseInt(document.querySelector('.cart-plus-minus-box').value) || 1;
+        const productImage = document.querySelector('.single-large-img img').src;
+
+        const product = {
+            name: productName,
+            price: productPrice,
+            quantity: productQuantity,
+            image: productImage
+        };
+
+        // 2. Lưu vào localStorage
+        let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        let existingProduct = cart.find(item => item.name === product.name);
+
+        if (existingProduct) {
+            existingProduct.quantity += product.quantity;
+        } else {
+            cart.push(product);
+        }
+
+        localStorage.setItem('cartItems', JSON.stringify(cart));
+
+        // 3. Cập nhật giao diện Mini Cart ngay lập tức
+        if (typeof renderMiniCart === 'function') {
+            renderMiniCart();
+        }
+
+        // 4. HIỆU ỨNG: Tự động mở thanh giỏ hàng bên cạnh (Side Menu)
+        $('body').addClass('ltn__utilize-open');
+        $('#ltn__utilize-cart-menu').addClass('ltn__utilize-open');
+        $('.ltn__utilize-overlay').fadeIn();
+        
+        // Tùy chọn: Thông báo nhỏ (không bắt buộc vì menu đã mở)
+        // console.log('Đã thêm sản phẩm thành công!');
+    });
+}
+
+
 })(jQuery);

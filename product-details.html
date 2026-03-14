@@ -128,9 +128,12 @@
                                         <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
                                             <span class="mini-cart-icon">
                                                 <i class="icon-handbag"></i>
-                                                <sup>2</sup>
+                                                <sup class="cart-quantity-count">0</sup>
                                             </span>
-                                            <h6><span>Giỏ hàng</span> <span class="ltn__secondary-color">2.231.000 đ</span></h6>
+                                            <h6>
+                                                <span>Giỏ hàng</span> 
+                                                <span class="ltn__secondary-color cart-total-price">0 đ</span>
+                                            </h6>
                                         </a>
                                     </div>
                                 </li>
@@ -224,66 +227,26 @@
 
     <!-- Utilize Cart Menu Start -->
     <div id="ltn__utilize-cart-menu" class="ltn__utilize ltn__utilize-cart-menu">
-        <div class="ltn__utilize-menu-inner ltn__scrollbar">
+        <div class="ltn__utilize-menu-inner ltn__custom-scrollbar">
             <div class="ltn__utilize-menu-head">
                 <span class="ltn__utilize-menu-title">Giỏ hàng</span>
                 <button class="ltn__utilize-close">×</button>
             </div>
-            <div class="mini-cart-product-area ltn__scrollbar">
-                <div class="mini-cart-item clearfix">
-                    <div class="mini-cart-img">
-                        <a href="#"><img src="img/sample/white-rose1.jpg" alt="Image"></a>
-                        <span class="mini-cart-item-delete"><i class="icon-trash"></i></span>
-                    </div>
-                    <div class="mini-cart-info">
-                        <h6><a href="#">Premium Joyful</a></h6>
-                        <span class="mini-cart-quantity">1 x 227.000 đ</span>
-                    </div>
-                </div>
-                <div class="mini-cart-item clearfix">
-                    <div class="mini-cart-img">
-                        <a href="#"><img src="img/sample/white-rose2.jpg" alt="Image"></a>
-                        <span class="mini-cart-item-delete"><i class="icon-trash"></i></span>
-                    </div>
-                    <div class="mini-cart-info">
-                        <h6><a href="#">The White Rose</a></h6>
-                        <span class="mini-cart-quantity">1 x 2.125.000 đ</span>
-                    </div>
-                </div>
-                <div class="mini-cart-item clearfix">
-                    <div class="mini-cart-img">
-                        <a href="#"><img src="img/sample/white-rose3.jpg" alt="Image"></a>
-                        <span class="mini-cart-item-delete"><i class="icon-trash"></i></span>
-                    </div>
-                    <div class="mini-cart-info">
-                        <h6><a href="#">Red Rose Bouquet</a></h6>
-                        <span class="mini-cart-quantity">1 x 2.300.000 đ</span>
-                    </div>
-                </div>
-                <div class="mini-cart-item clearfix">
-                    <div class="mini-cart-img">
-                        <a href="#"><img src="img/sample/white-rose4.jpg" alt="Image"></a>
-                        <span class="mini-cart-item-delete"><i class="icon-trash"></i></span>
-                    </div>
-                    <div class="mini-cart-info">
-                        <h6><a href="#">Tuổi Mộng Mơ - 5235
-</a></h6>
-                        <span class="mini-cart-quantity">1 x 1.700.000 đ</span>
-                    </div>
-                </div>
+            <div class="mini-cart-product-area ltn__custom-scrollbar">
+                <ul id="mini-cart-list">
+                    </ul>
             </div>
             <div class="mini-cart-footer">
                 <div class="mini-cart-sub-total">
-                    <h5>Tạm tính: <span>8.352.000 đ</span></h5>
+                    <h5>Tạm tính: <span id="mini-cart-total">0 đ</span></h5>
                 </div>
                 <div class="btn-wrapper">
                     <a href="cart.html" class="theme-btn-1 btn btn-effect-1">Xem giỏ hàng</a>
-                    <a href="cart.html" class="theme-btn-2 btn btn-effect-2">Thanh toán</a>
+                    <a href="checkout.html" class="theme-btn-2 btn btn-effect-1">Thanh toán</a>
                 </div>
-                <p>Miễn phí vận chuyển cho đơn hàng trên 2.000.000đ!</p>
             </div>
-
         </div>
+    </div>
     </div>
     <!-- Utilize Cart Menu End -->
 
@@ -298,88 +261,82 @@
             </div>
             <div class="ltn__utilize-menu-search-form">
                 <form action="#">
-                    <input type="text" placeholder="Tìm kiếm...">
+                    <input type="text" placeholder="Search...">
                     <button><i class="icon-magnifier"></i></button>
                 </form>
             </div>
             <div class="ltn__utilize-menu">
                 <ul>
-                    <li><a href="#">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Home Style - 01</a></li>
-                            <li><a href="index-2.html">Home Style - 02</a></li>
-                            <li><a href="index-3.html">Home Style - 03</a></li>
-                            <li><a href="index-4.html">Home Style - 04</a></li>
+                    <li class="sub-menu"><a href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="sub-menu"><a href="#">Chủ đề</a>
+                        <ul>
+                            <li><a href="hoa-sinh-nhat.html">Hoa sinh nhật</a></li>
+                            <li><a href="hoa-khai-truong.html">Hoa khai trương</a></li>
+                            <li><a href="hoa-tinh-yeu.html">Hoa tình yêu</a></li>
+                            <li><a href="hoa-tot-nghiep.html">Hoa tốt nghiệp </a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="#">Shop</a>
-                        <ul class="sub-menu">
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="shop-grid.html">Shop Grid</a></li>
-                            <li><a href="shop-left-sidebar.html">Shop Left sidebar</a></li>
-                            <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
-                            <li><a href="product-details.html">Shop details </a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="order-tracking.html">Order Tracking</a></li>
-                            <li><a href="account.html">My Account</a></li>
-                            <li><a href="login.html">Sign in</a></li>
-                            <li><a href="register.html">Register</a></li>
+                    <li class="sub-menu"><a href="#">Đối tượng</a>
+                        <ul>
+                            <li><a href="nguoi-yeu.html">Người yêu</a></li>
+                            <li><a href="ban-be.html">Bạn bè</a></li>
+                            <li><a href="vo-chong.html">Vợ chồng</a></li>
+                            <li><a href="bo-me.html">Bố mẹ</a></li>
+                            <li><a href="dong-nghiep.html">Đồng nghiệp</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">News</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog.html">News</a></li>
-                            <li><a href="blog-grid.html">News Grid</a></li>
-                            <li><a href="blog-left-sidebar.html">News Left sidebar</a></li>
-                            <li><a href="blog-right-sidebar.html">News Right sidebar</a></li>
-                            <li><a href="blog-details.html">News details</a></li>
+                    <li class="sub-menu"><a href="#">Kiểu dáng</a>
+                        <ul>
+                            <li><a href="bo-hoa.html">Bó hoa</a></li>
+                            <li><a href="gio-hoa.html">Giỏ hoa</a></li>
+                            <li><a href="binh-hoa.html">Bình hoa</a></li>
+                            <li><a href="lanh-hoa.html">Lẵng hoa</a></li>
+                            <li><a href="hop-hoa.html">Hộp hoa</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="portfolio-2.html">Portfolio - 02</a></li>
-                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="locations.html">Google Map Locations</a></li>
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="coming-soon.html">Coming Soon</a></li>
+                    <li class="sub-menu"><a href="#">Bài viết</a>
+                        <ul>
+                            <li><a href="chuyen-ve-hoa.html">Chuyện về hoa</a></li>
+                            <li><a href="huong-dan-mua-hang.html">Hướng dẫn mua hàng</a></li>
+                            <li><a href="chinh-sach-giao-hang.html">Chính sách giao hàng</a></li>
+                            <li><a href="dieu-khoan-va-bao-mat.html">Điều khoản và bảo mật</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Về Floa</a>
+                        <ul>
+                            <li><a href="about-floa.html">Floa - Mỗi ngày một nhành hoa</a></li>
+                            <li><a href="lien-he.html">Liên hệ</a></li>
+                        </ul>
+                    </li>             
                 </ul>
             </div>
             <div class="ltn__utilize-buttons ltn__utilize-buttons-2">
                 <ul>
                     <li>
-                        <a href="account.html" title="Tài khoản">
+                        <a href="account.html" title="My Account">
                             <span class="utilize-btn-icon">
                                 <i class="icon-user"></i>
                             </span>
-                            Tài khoản
+                            My Account
                         </a>
                     </li>
                     <li>
-                        <a href="wishlist.html" title="Yêu thích">
+                        <a href="wishlist.html" title="Wishlist">
                             <span class="utilize-btn-icon">
                                 <i class="icon-heart"></i>
                                 <sup>3</sup>
                             </span>
-                            Yêu thích
+                            Wishlist
                         </a>
                     </li>
                     <li>
-                        <a href="cart.html" title="Giỏ hàng">
+                        <a href="cart.html" title="Shoping Cart">
                             <span class="utilize-btn-icon">
                                 <i class="icon-handbag"></i>
                                 <sup>5</sup>
                             </span>
-                            Giỏ hàng
+                            Shoping Cart
                         </a>
                     </li>
                 </ul>
@@ -475,8 +432,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="modal-product-info shop-details-info pl-0">
-                                    <h3>Tuổi Mộng Mơ - 5235
- Red</h3>
+                                    <h3>Tuổi Mộng Mơ - 5235</h3>
                                     <div class="product-price-ratting mb-20">
                                         <ul>
                                             <li>
@@ -510,7 +466,7 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <a href="#" class="theme-btn-1 btn btn-effect-1 d-add-to-cart" title="Thêm vào giỏ" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
+                                                <a href="#" class="theme-btn-1 btn btn-effect-1 d-add-to-cart" title="Thêm vào giỏ">
                                                     <span>THÊM VÀO GIỎ</span>
                                                 </a>
                                             </li>
@@ -937,28 +893,17 @@ Sản phẩm thực nhận có thể khác với hình đại diện trên websi
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">Add to Cart</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="product-details.html">Pink Flower Tree</a></h2>
                             <div class="product-price">
-                                <span>$18.00</span>
-                                <del>$21.00</del>
+                                <span>500.000 đ</span>
+                                <del>550.000 đ</del>
                             </div>
                         </div>
                     </div>
@@ -977,27 +922,16 @@ Sản phẩm thực nhận có thể khác với hình đại diện trên websi
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">Add to Cart</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="product-details.html">Premium Joyful</a></h2>
                             <div class="product-price">
-                                <span>$18.00</span>
+                                <span>630.000 đ</span>
                             </div>
                         </div>
                     </div>
@@ -1016,28 +950,17 @@ Sản phẩm thực nhận có thể khác với hình đại diện trên websi
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">Add to Cart</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="product-details.html">The White Rose</a></h2>
                             <div class="product-price">
-                                <span>$16.00</span>
-                                <del>$19.00</del>
+                                <span>350.000 đ</span>
+                                <del>560.000 đ</del>
                             </div>
                         </div>
                     </div>
@@ -1056,27 +979,16 @@ Sản phẩm thực nhận có thể khác với hình đại diện trên websi
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">Add to Cart</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="product-details.html">Red Rose Bouquet</a></h2>
                             <div class="product-price">
-                                <span>$20.00</span>
+                                <span>450.000 đ</span>
                             </div>
                         </div>
                     </div>
@@ -1095,27 +1007,16 @@ Sản phẩm thực nhận có thể khác với hình đại diện trên websi
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">Add to Cart</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="product-details.html">Heart's Desire</a></h2>
                             <div class="product-price">
-                                <span>$15.00</span>
+                                <span>350.000 đ</span>
                             </div>
                         </div>
                     </div>
@@ -1126,354 +1027,121 @@ Sản phẩm thực nhận có thể khác với hình đại diện trên websi
     <!-- PRODUCT SLIDER AREA END -->
 
 
-    <!-- BRAND LOGO AREA START -->
-    <div class="ltn__brand-logo-area  ltn__brand-logo-1 section-bg-1 pt-35 pb-35 plr--5">
-        <div class="container-fluid">
-            <div class="row ltn__brand-logo-active">
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="img/brand-logo/1.png" alt="Brand Logo">
+    <!-- FOOTER AREA START -->
+     <footer class="ltn__footer-area">
+    <div class="footer-top-area section-bg-5 pt-80 pb-30">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-sm-12 col-12 mb-30">
+                    <div class="footer-widget footer-about-widget">
+                        <div class="footer-logo mb-20">
+                            <div class="site-logo">
+                                <img src="img/logo.png" alt="Floa Flower Logo">
+                            </div>
+                        </div>
+                        <h4 class="footer-title">Floa Flower</h4>
+                        <div class="footer-address">
+                            <ul>
+                                <li>
+                                    <div class="footer-address-icon">
+                                        <i class="icon-placeholder"></i>
+                                    </div>
+                                    <div class="footer-address-info">
+                                        <p>279 Nguyễn Tri Phương, Phường 8, Quận 10, TP. Hồ Chí Minh</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="footer-address-icon">
+                                        <i class="icon-phone"></i>
+                                    </div>
+                                    <div class="footer-address-info">
+                                        <p><a href="tel:+0123456789">+0123-456-789</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="footer-address-icon">
+                                        <i class="icon-globe"></i>
+                                    </div>
+                                    <div class="footer-address-info">
+                                        <p><a href="#" target="_blank">floaflower.vn</a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ltn__social-media mt-20">
+                            <ul>
+                                <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" title="X (Twitter)"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#" title="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+                                <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="img/brand-logo/2.png" alt="Brand Logo">
+
+                <div class="col-xl-3 col-md-6 col-sm-6 col-12 mb-30">
+                    <div class="footer-widget footer-menu-widget clearfix">
+                        <h4 class="footer-title">Thông tin</h4>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="about.html">Về chúng tôi</a></li>
+                                <li><a href="contact.html">Chính sách bảo mật</a></li>
+                                <li><a href="faq.html">Thông tin giao hàng</a></li>
+                                <li><a href="contact.html">Điều khoản dịch vụ</a></li>
+                                <li><a href="contact.html">Tuyển dụng</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="img/brand-logo/3.png" alt="Brand Logo">
+
+                <div class="col-xl-3 col-md-6 col-sm-6 col-12 mb-30">
+                    <div class="footer-widget footer-menu-widget clearfix">
+                        <h4 class="footer-title">Hỗ trợ khách hàng</h4>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="account.html">Tài khoản của tôi</a></li>
+                                <li><a href="wishlist.html">Sản phẩm yêu thích</a></li>
+                                <li><a href="cart.html">Giỏ hàng</a></li>
+                                <li><a href="product-details.html">Chính sách vận chuyển</a></li>
+                                <li><a href="account.html">Đổi trả & Hoàn tiền</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="img/brand-logo/4.png" alt="Brand Logo">
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="img/brand-logo/5.png" alt="Brand Logo">
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="img/brand-logo/1.png" alt="Brand Logo">
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="ltn__brand-logo-item">
-                        <img src="img/brand-logo/2.png" alt="Brand Logo">
+
+                <div class="col-xl-3 col-md-6 col-sm-12 col-12 mb-30">
+                    <div class="footer-widget footer-about-widget">
+                        <h4 class="footer-title">Chỉ đường đi</h4>
+                        <div class="footer-address">
+                            <div class="map-container" style="border-radius: 8px; overflow: hidden;">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6511106441585!2d106.666496975838!3d10.761348859473531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee4e5555555%3A0xc3f58e652ad7552a!2zMjc5IE5ndXnhu4VuIFRyaSBQaMawxqFuZywgUGjGsOG7nW5nIDgsIFF14bqtbiAxMCwgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1svi!2s!4v1710000000000!5m2!1svi!2s" 
+                                    width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                        <div class="footer-payment-img mt-20">
+                            <img src="img/icons/payment-6.png" alt="Phương thức thanh toán">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- BRAND LOGO AREA END -->
-
-    <!-- FOOTER AREA START -->
-    <footer class="ltn__footer-area ">
-        <div class="footer-top-area  section-bg-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget footer-menu-widget clearfix">
-                            <h4 class="footer-title">Tài khoản</h4>
-                            <div class="footer-menu">
-                                <ul>
-                                    <li><a href="account.html">Tài khoản của tôi</a></li>
-                                    <li><a href="checkout.html">Thanh toán</a></li>
-                                    <li><a href="contact.html">Liên hệ</a></li>
-                                    <li><a href="cart.html">Giỏ hàng</a></li>
-                                    <li><a href="wishlist.html">Yêu thích</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget footer-menu-widget clearfix">
-                            <h4 class="footer-title">Truy cập nhanh</h4>
-                            <div class="footer-menu">
-                                <ul>
-                                    <li><a href="locations.html">Vị trí cửa hàng</a></li>
-                                    <li><a href="order-tracking.html">Theo dõi đơn hàng</a></li>
-                                    <li><a href="product-details.html">Hướng dẫn chọn size</a></li>
-                                    <li><a href="account.html">Tài khoản của tôi</a></li>
-                                    <li><a href="faq.html">Câu hỏi thường gặp</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget footer-menu-widget clearfix">
-                            <h4 class="footer-title">Thông tin</h4>
-                            <div class="footer-menu">
-                                <ul>
-                                    <li><a href="contact.html">Chính sách bảo mật</a></li>
-                                    <li><a href="about.html">Về chúng tôi</a></li>
-                                    <li><a href="contact.html">Tuyển dụng</a></li>
-                                    <li><a href="faq.html">Thông tin giao hàng</a></li>
-                                    <li><a href="contact.html">Điều khoản & Điều kiện</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget footer-menu-widget clearfix">
-                            <h4 class="footer-title">Chăm sóc khách hàng</h4>
-                            <div class="footer-menu">
-                                <ul>
-                                    <li><a href="product-details.html">Chính sách vận chuyển</a></li>
-                                    <li><a href="contact.html">Trợ giúp & Liên hệ</a></li>
-                                    <li><a href="account.html">Đổi trả & Hoàn tiền</a></li>
-                                    <li><a href="shop.html">Cửa hàng trực tuyến</a></li>
-                                    <li><a href="contact.html">Điều khoản sử dụng</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget footer-about-widget">
-                            <h4 class="footer-title">Về cửa hàng</h4>
-                            <div class="footer-logo d-none">
-                                <div class="site-logo">
-                                    <img src="img/logo.png" alt="Logo">
-                                </div>
-                            </div>
-                            <p>Chúng tôi chuyên cung cấp hoa tươi, hàng ngày phục vụ nhu cầu tặng hoa, trang trí cho mọi dịp đặc biệt của bạn.</p>
-                            <div class="footer-address">
-                                <ul>
-                                    <li>
-                                        <div class="footer-address-icon">
-                                            <i class="icon-location-pin"></i>
-                                        </div>
-                                        <div class="footer-address-info">
-                                            <p>123 Đường ABC, Quận 1, TP.HCM</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-address-icon">
-                                            <i class="icon-phone"></i>
-                                        </div>
-                                        <div class="footer-address-info">
-                                            <p><a href="tel:+0123-456789">+0123-456789</a></p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="footer-address-icon">
-                                            <i class="icon-envelope"></i>
-                                        </div>
-                                        <div class="footer-address-info">
-                                            <p><a href="mailto:example@example.com">example@example.com</a></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="ltn__social-media mt-20 d-none">
-                                <ul>
-                                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
-                                    <li><a href="#" title="Youtube"><i class="fab fa-youtube"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="footer-payment-img">
-                                <img src="img/icons/payment-6.png" alt="Payment Image">
-                            </div>
-                        </div>
+    
+    <div class="ltn__copyright-area ltn__copyright-2 section-bg-5">
+        <div class="container ltn__border-top-2">
+            <div class="row">
+            <div class="col-md-12 col-12 text-center">
+                    <div class="footer-widget">
+                        <p>© <span class="current-year">2026</span> - UEH.NHÓM 5 - PTUDTMDT-26D4INF50902701-T7</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ltn__copyright-area ltn__copyright-2 section-bg-5">
-            <div class="container ltn__border-top-2">
-                <div class="row">
-                    <div class="col-md-6 col-12">
-                        <div class="footer-copyright-left">
-                            <div class="ltn__copyright-design clearfix">
-                                <p>&copy; <span class="current-year"></span> - Just For You</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-12 align-self-center">
-                        <div class="footer-copyright-right text-end">
-                            <div class="ltn__copyright-menu d-none">
-                                <ul>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Claim</a></li>
-                                    <li><a href="#">Privacy & Policy</a></li>
-                                </ul>
-                            </div>
-                            <div class="ltn__social-media ">
-                                <ul>
-                                    <li><a href="#" title="Facebook"><i class="icon-social-facebook"></i></a></li>
-                                    <li><a href="#" title="Twitter"><i class="icon-social-twitter"></i></a></li>
-                                    <li><a href="#" title="Pinterest"><i class="icon-social-pinterest"></i></a></li>
-                                    <li><a href="#" title="Instagram"><i class="icon-social-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
+</footer>
     <!-- FOOTER AREA END -->
 
-    <!-- MODAL AREA START (Quick View Modal) -->
-    <div class="ltn__modal-area ltn__quick-view-modal-area">
-        <div class="modal fade" id="quick_view_modal" tabindex="-1">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            <!-- <i class="fas fa-times"></i> -->
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                         <div class="ltn__quick-view-modal-inner">
-                             <div class="modal-product-item">
-                                <div class="row">
-                                    <div class="col-lg-6 col-12">
-                                        <div class="modal-product-img">
-                                            <img src="img/sample/white-rose4.jpg" alt="#">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-12">
-                                        <div class="modal-product-info shop-details-info pl-0">
-                                            <h3>Tuổi Mộng Mơ - 5235
- Red</h3>
-                                            <div class="product-price-ratting mb-20">
-                                                <ul>
-                                                    <li>
-                                                        <div class="product-price">
-                                                            <span>200.000 đ</span>
-                                                            <del>227.000 đ</del>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                                                <li><a href="#"><i class="icon-star"></i></a></li>
-                                                                <li class="review-total"> <a href="#"> ( 95 Reviews )</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="modal-product-brief">
-                                                <p>Dịu Dàng Ngày Mới – món quà hoàn hảo để gửi gắm những yêu thương nhẹ nhàng, một lời chúc bình yên dành cho những người ta trân quý nhất.</p>
-                                            </div>
-                                            <div class="ltn__product-details-menu-2 product-cart-wishlist-btn mb-30">
-                                                <ul>
-                                                    <li>
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="theme-btn-1 btn btn-effect-1 d-add-to-cart" title="Thêm vào giỏ" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                                            <span>THÊM VÀO GIỎ</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn btn-effect-1 d-add-to-wishlist" title="Thêm vào yêu thích" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-                                                            <i class="icon-heart"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="ltn__social-media mb-30">
-                                                <ul>
-                                                    <li class="d-meta-title">Chia sẻ:</li>
-                                                    <li><a href="#" title="Facebook"><i class="icon-social-facebook"></i></a></li>
-                                                    <li><a href="#" title="Twitter"><i class="icon-social-twitter"></i></a></li>
-                                                    <li><a href="#" title="Pinterest"><i class="icon-social-pinterest"></i></a></li>
-                                                    <li><a href="#" title="Instagram"><i class="icon-social-instagram"></i></a></li>
-                                                    
-                                                </ul>
-                                            </div>
-                                            <div class="modal-product-meta ltn__product-details-menu-1 mb-30 d-none">
-                                                <ul>
-                                                    <li><strong>SKU:</strong> <span>12345</span></li>
-                                                    <li>
-                                                        <strong>Categories:</strong> 
-                                                        <span>
-                                                            <a href="#">Flower</a>
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <strong>Tags:</strong> 
-                                                        <span>
-                                                            <a href="#">Love</a>
-                                                            <a href="#">Flower</a>
-                                                            <a href="#">Heart</a>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="ltn__safe-checkout d-none">
-                                                <h5>Guaranteed Safe Checkout</h5>
-                                                <img src="img/icons/payment-2.png" alt="Payment Image">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                             </div>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- MODAL AREA END -->
-
-    <!-- MODAL AREA START (Wishlist Modal) -->
-    <div class="ltn__modal-area ltn__add-to-cart-modal-area">
-        <div class="modal fade" id="liton_wishlist_modal" tabindex="-1">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                         <div class="ltn__quick-view-modal-inner">
-                             <div class="modal-product-item">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="modal-product-img">
-                                            <img src="img/sample/white-rose7.jpg" alt="#">
-                                        </div>
-                                         <div class="modal-product-info">
-                                            <h5><a href="product-details.html">Brake Conversion Kit</a></h5>
-                                            <p class="added-cart"><i class="fa fa-check-circle"></i>  Đã thêm vào danh sách yêu thích thành công</p>
-                                            <div class="btn-wrapper">
-                                                <a href="wishlist.html" class="theme-btn-1 btn btn-effect-1">Xem danh sách yêu thích</a>
-                                            </div>
-                                         </div>
-                                         <!-- additional-info -->
-                                         <div class="additional-info d-none">
-                                            <p>Chúng tôi muốn tặng bạn <b>giảm giá 10%</b> cho đơn hàng đầu tiên, <br>  Sử dụng mã giảm giá khi thanh toán</p>
-                                            <div class="payment-method">
-                                                <img src="img/icons/payment.png" alt="#">
-                                            </div>
-                                         </div>
-                                    </div>
-                                </div>
-                             </div>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- MODAL AREA END -->
 
 </div>
 <!-- Body main wrapper end -->
