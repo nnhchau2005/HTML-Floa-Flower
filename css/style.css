@@ -48,7 +48,11 @@
 # Margin Bottom
 # Custom margin Padding
 
+#NEW UPDATE HERE !!!!
+
 # Embed ifame Google Map
+# Editable shopping cart with Table
+# Nút -/= số lượng sản phẩm
 
 ============================================================= */
 /* -------------------------------------
@@ -9963,6 +9967,12 @@ blockquote {
 /* ----------------------------------------------------
     Cart plus minus
 ---------------------------------------------------- */
+.cart-plus-minus input {
+    user-select: text !important; /* Ép buộc cho phép chọn văn bản */
+    -webkit-user-select: text !important;
+    cursor: text; /* Hiện con trỏ chữ I khi rê vào ô số */
+}
+
 .cart-plus-minus {
   border: 2px solid;
   height: 50px;
@@ -10001,6 +10011,7 @@ input.cart-plus-minus-box {
   text-align: center;
   width: 40%;
   font-weight: 400; }
+
 
 /* ----------------------------------------------------
     Product Details
@@ -12956,6 +12967,53 @@ input.cart-plus-minus-box {
       width: 100% !important;
       height: 100% !important;
       border: 0;}
+
+
+/* -------------------------------------
+    Editalbe shoping cart table
+------------------------------------- */
+
+        /* fixed table layout keeps columns aligned regardless of name length */
+        .shoping-cart-table .table {
+            table-layout: fixed;
+            width: 100%;
+        }
+        /* truncate long product names so they don't stretch row */
+        .cart-product-info {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        /* ensure numeric columns align left for consistent vertical alignment */
+        .cart-product-price,
+        .cart-product-quantity,
+        .cart-product-subtotal {
+            text-align: left !important;
+        }
+        /* give price/quantity/total predictable column widths */
+        .shoping-cart-table .table th.cart-product-price,
+        .shoping-cart-table .table td.cart-product-price,
+        .shoping-cart-table .table th.cart-product-quantity,
+        .shoping-cart-table .table td.cart-product-quantity,
+        .shoping-cart-table .table th.cart-product-subtotal,
+        .shoping-cart-table .table td.cart-product-subtotal {
+            width: 12% !important;
+            white-space: nowrap;
+            text-align: left !important;
+            padding-left: 0.5rem !important;
+        }
+
+/* -------------------------------------
+    Nút +/- thêm sản phẩm
+------------------------------------- */
+      .qtybutton {
+          cursor: pointer;
+          user-select: none;
+          display: inline-block;
+          padding: 5px 10px; /* Tùy chỉnh kích thước nút */
+          text-align: center;
+      }
+
 
 
 /* ----------------------------------------------------

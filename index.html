@@ -124,9 +124,12 @@
                                         <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
                                             <span class="mini-cart-icon">
                                                 <i class="icon-handbag"></i>
-                                                <sup>3</sup>
+                                                <sup class="cart-quantity-count">0</sup>
                                             </span>
-                                            <h6><span>Giỏ hàng</span> <span class="ltn__secondary-color">1.735.000</span></h6>
+                                            <h6>
+                                                <span>Giỏ hàng</span> 
+                                                <span class="ltn__secondary-color cart-total-price">0 đ</span>
+                                            </h6>
                                         </a>
                                     </div>
                                 </li>
@@ -220,55 +223,24 @@
 
     <!-- Utilize Cart Menu Start -->
     <div id="ltn__utilize-cart-menu" class="ltn__utilize ltn__utilize-cart-menu">
-        <div class="ltn__utilize-menu-inner ltn__scrollbar">
+        <div class="ltn__utilize-menu-inner ltn__custom-scrollbar">
             <div class="ltn__utilize-menu-head">
-                <span class="ltn__utilize-menu-title">Cart</span>
+                <span class="ltn__utilize-menu-title">Giỏ hàng</span>
                 <button class="ltn__utilize-close">×</button>
             </div>
-            <div class="mini-cart-product-area ltn__scrollbar">
-                <div class="mini-cart-item clearfix">
-                    <div class="mini-cart-img">
-                        <a href="#"><img src="img/product/1.png" alt="Image"></a>
-                        <span class="mini-cart-item-delete"><i class="icon-trash"></i></span>
-                    </div>
-                    <div class="mini-cart-info">
-                        <h6><a href="#">Tuổi Mộng Mơ - 5235</a></h6>
-                        <span class="mini-cart-quantity">1 x 200.000</span>
-                    </div>
-                </div>
-                <div class="mini-cart-item clearfix">
-                    <div class="mini-cart-img">
-                        <a href="#"><img src="img/product/2.png" alt="Image"></a>
-                        <span class="mini-cart-item-delete"><i class="icon-trash"></i></span>
-                    </div>
-                    <div class="mini-cart-info">
-                        <h6><a href="#">Mini flower vase 05 - 12477</a></h6>
-                        <span class="mini-cart-quantity">1 x 400.000</span>
-                    </div>
-                </div>
-                <div class="mini-cart-item clearfix">
-                    <div class="mini-cart-img">
-                        <a href="#"><img src="img/product/3.png" alt="Image"></a>
-                        <span class="mini-cart-item-delete"><i class="icon-trash"></i></span>
-                    </div>
-                    <div class="mini-cart-info">
-                        <h6><a href="#">Starlight - 16106</a></h6>
-                        <span class="mini-cart-quantity">1 x 950.000</span>
-                    </div>
-                </div>
-                
+            <div class="mini-cart-product-area ltn__custom-scrollbar">
+                <ul id="mini-cart-list">
+                </ul>
             </div>
             <div class="mini-cart-footer">
                 <div class="mini-cart-sub-total">
-                    <h5>Tổng cộng: <span>1.735.000</span></h5>
+                    <h5>Tạm tính: <span id="mini-cart-total">0 đ</span></h5>
                 </div>
                 <div class="btn-wrapper">
-                    <a href="cart.html" class="theme-btn-1 btn btn-effect-1">Xem giỏ</a>
-                    <a href="cart.html" class="theme-btn-2 btn btn-effect-2">Thanh toán</a>
+                    <a href="cart.html" class="theme-btn-1 btn btn-effect-1">Xem giỏ hàng</a>
+                    <a href="checkout.html" class="theme-btn-2 btn btn-effect-1">Thanh toán</a>
                 </div>
-                <p>Free ship đơn hàng từ 1.000.000</p>
             </div>
-
         </div>
     </div>
     <!-- Utilize Cart Menu End -->
@@ -552,20 +524,9 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">THÊM VÀO GIỎ</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li>                                  
                                 </ul>
                             </div>
                         </div>
@@ -592,20 +553,9 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">THÊM VÀO GIỎ</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
@@ -631,20 +581,9 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">THÊM VÀO GIỎ</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
@@ -671,20 +610,9 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">THÊM VÀO GIỎ</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
@@ -710,20 +638,9 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">THÊM VÀO GIỎ</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
@@ -749,24 +666,10 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">THÊM VÀO GIỎ</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
-                            </div>
-                            <div class="ltn__product-countdown">
-                                <div class="ltn__countdown" data-countdown="2021/12/25"></div>
                             </div>
                         </div>
                         <div class="product-info">
@@ -792,20 +695,9 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">THÊM VÀO GIỎ </span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
@@ -831,20 +723,9 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">THÊM VÀO GIỎ</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
@@ -909,28 +790,17 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">Add to Cart</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="product-details.html">Pink Flower Tree</a></h2>
                             <div class="product-price">
-                                <span>$18.00</span>
-                                <del>$21.00</del>
+                                <span>500.000 đ</span>
+                                <del>550.000 đ</del>
                             </div>
                         </div>
                     </div>
@@ -949,27 +819,16 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">Add to Cart</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="product-details.html">Premium Joyful</a></h2>
                             <div class="product-price">
-                                <span>$18.00</span>
+                                <span>630.000 đ</span>
                             </div>
                         </div>
                     </div>
@@ -988,28 +847,17 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">Add to Cart</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="product-details.html">The White Rose</a></h2>
                             <div class="product-price">
-                                <span>$16.00</span>
-                                <del>$19.00</del>
+                                <span>350.000 đ</span>
+                                <del>560.000 đ</del>
                             </div>
                         </div>
                     </div>
@@ -1028,27 +876,16 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">Add to Cart</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="product-details.html">Red Rose Bouquet</a></h2>
                             <div class="product-price">
-                                <span>$20.00</span>
+                                <span>450.000 đ</span>
                             </div>
                         </div>
                     </div>
@@ -1067,27 +904,16 @@
                                 <ul>
                                     <li>
                                         <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-magnifier"></i>
+                                           <span class="cart-text d-none d-xl-block"> XEM NHANH </span>
                                         </a>
-                                    </li>
-                                    <li class="add-to-cart">
-                                        <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                            <span class="cart-text d-none d-xl-block">Add to Cart</span>
-                                            <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                            <i class="icon-shuffle"></i>
-                                        </a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </div>
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="product-details.html">Heart's Desire</a></h2>
                             <div class="product-price">
-                                <span>$15.00</span>
+                                <span>350.000 đ</span>
                             </div>
                         </div>
                     </div>
@@ -1251,118 +1077,118 @@
     <!-- BLOG AREA END -->
 
     <!-- FOOTER AREA START -->
-<footer class="ltn__footer-area">
-    <div class="footer-top-area section-bg-5 pt-80 pb-30">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3 col-md-6 col-sm-12 col-12 mb-30">
-                    <div class="footer-widget footer-about-widget">
-                        <div class="footer-logo mb-20">
-                            <div class="site-logo">
-                                <img src="img/logo.png" alt="Floa Flower Logo">
+    <footer class="ltn__footer-area">
+        <div class="footer-top-area section-bg-5 pt-80 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-sm-12 col-12 mb-30">
+                        <div class="footer-widget footer-about-widget">
+                            <div class="footer-logo mb-20">
+                                <div class="site-logo">
+                                    <img src="img/logo.png" alt="Floa Flower Logo">
+                                </div>
+                            </div>
+                            <h4 class="footer-title">Floa Flower</h4>
+                            <div class="footer-address">
+                                <ul>
+                                    <li>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-placeholder"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p>279 Nguyễn Tri Phương, Phường 8, Quận 10, TP. Hồ Chí Minh</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-phone"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p><a href="tel:+0123456789">+0123-456-789</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-globe"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p><a href="#" target="_blank">floaflower.vn</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ltn__social-media mt-20">
+                                <ul>
+                                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" title="X (Twitter)"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#" title="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+                                    <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
                             </div>
                         </div>
-                        <h4 class="footer-title">Floa Flower</h4>
-                        <div class="footer-address">
-                            <ul>
-                                <li>
-                                    <div class="footer-address-icon">
-                                        <i class="icon-placeholder"></i>
-                                    </div>
-                                    <div class="footer-address-info">
-                                        <p>279 Nguyễn Tri Phương, Phường 8, Quận 10, TP. Hồ Chí Minh</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="footer-address-icon">
-                                        <i class="icon-phone"></i>
-                                    </div>
-                                    <div class="footer-address-info">
-                                        <p><a href="tel:+0123456789">+0123-456-789</a></p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="footer-address-icon">
-                                        <i class="icon-globe"></i>
-                                    </div>
-                                    <div class="footer-address-info">
-                                        <p><a href="#" target="_blank">floaflower.vn</a></p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="ltn__social-media mt-20">
-                            <ul>
-                                <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#" title="X (Twitter)"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#" title="Pinterest"><i class="fab fa-pinterest"></i></a></li>
-                                <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
                     </div>
-                </div>
 
-                <div class="col-xl-3 col-md-6 col-sm-6 col-12 mb-30">
-                    <div class="footer-widget footer-menu-widget clearfix">
-                        <h4 class="footer-title">Thông tin</h4>
-                        <div class="footer-menu">
-                            <ul>
-                                <li><a href="about.html">Về chúng tôi</a></li>
-                                <li><a href="contact.html">Chính sách bảo mật</a></li>
-                                <li><a href="faq.html">Thông tin giao hàng</a></li>
-                                <li><a href="contact.html">Điều khoản dịch vụ</a></li>
-                                <li><a href="contact.html">Tuyển dụng</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6 col-sm-6 col-12 mb-30">
-                    <div class="footer-widget footer-menu-widget clearfix">
-                        <h4 class="footer-title">Hỗ trợ khách hàng</h4>
-                        <div class="footer-menu">
-                            <ul>
-                                <li><a href="account.html">Tài khoản của tôi</a></li>
-                                <li><a href="wishlist.html">Sản phẩm yêu thích</a></li>
-                                <li><a href="cart.html">Giỏ hàng</a></li>
-                                <li><a href="product-details.html">Chính sách vận chuyển</a></li>
-                                <li><a href="account.html">Đổi trả & Hoàn tiền</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6 col-sm-12 col-12 mb-30">
-                    <div class="footer-widget footer-about-widget">
-                        <h4 class="footer-title">Chỉ đường đi</h4>
-                        <div class="footer-address">
-                            <div class="map-container" style="border-radius: 8px; overflow: hidden;">
-                                <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6511106441585!2d106.666496975838!3d10.761348859473531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee4e5555555%3A0xc3f58e652ad7552a!2zMjc5IE5ndXnhu4VuIFRyaSBQaMawxqFuZywgUGjGsOG7nW5nIDgsIFF14bqtbiAxMCwgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1svi!2s!4v1710000000000!5m2!1svi!2s" 
-                                    width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="col-xl-3 col-md-6 col-sm-6 col-12 mb-30">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">Thông tin</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="about.html">Về chúng tôi</a></li>
+                                    <li><a href="contact.html">Chính sách bảo mật</a></li>
+                                    <li><a href="faq.html">Thông tin giao hàng</a></li>
+                                    <li><a href="contact.html">Điều khoản dịch vụ</a></li>
+                                    <li><a href="contact.html">Tuyển dụng</a></li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="footer-payment-img mt-20">
-                            <img src="img/icons/payment-6.png" alt="Phương thức thanh toán">
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 col-sm-6 col-12 mb-30">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">Hỗ trợ khách hàng</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="account.html">Tài khoản của tôi</a></li>
+                                    <li><a href="wishlist.html">Sản phẩm yêu thích</a></li>
+                                    <li><a href="cart.html">Giỏ hàng</a></li>
+                                    <li><a href="product-details.html">Chính sách vận chuyển</a></li>
+                                    <li><a href="account.html">Đổi trả & Hoàn tiền</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 col-sm-12 col-12 mb-30">
+                        <div class="footer-widget footer-about-widget">
+                            <h4 class="footer-title">Chỉ đường đi</h4>
+                            <div class="footer-address">
+                                <div class="map-container" style="border-radius: 8px; overflow: hidden;">
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6511106441585!2d106.666496975838!3d10.761348859473531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee4e5555555%3A0xc3f58e652ad7552a!2zMjc5IE5ndXnhu4VuIFRyaSBQaMawxqFuZywgUGjGsOG7nW5nIDgsIFF14bqtbiAxMCwgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1svi!2s!4v1710000000000!5m2!1svi!2s" 
+                                        width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                </div>
+                            </div>
+                            <div class="footer-payment-img mt-20">
+                                <img src="img/icons/payment-6.png" alt="Phương thức thanh toán">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="ltn__copyright-area ltn__copyright-2 section-bg-5">
-        <div class="container ltn__border-top-2">
-            <div class="row">
-            <div class="col-md-12 col-12 text-center">
-                    <div class="footer-widget">
-                        <p>© <span class="current-year">2026</span> - UEH.NHÓM 5 - PTUDTMDT-26D4INF50902701-T7</p>
+        
+        <div class="ltn__copyright-area ltn__copyright-2 section-bg-5">
+            <div class="container ltn__border-top-2">
+                <div class="row">
+                <div class="col-md-12 col-12 text-center">
+                        <div class="footer-widget">
+                            <p>© <span class="current-year">2026</span> - UEH.NHÓM 5 - PTUDTMDT-26D4INF50902701-T7</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
     <!-- FOOTER AREA END -->
 
     <!-- MODAL AREA START (Quick View Modal) -->
@@ -1387,8 +1213,7 @@
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <div class="modal-product-info shop-details-info pl-0">
-                                            <h3>Tuổi Mộng Mơ - 5235
- Red</h3>
+                                            <h3>Tuổi Mộng Mơ - 5235</h3>
                                             <div class="product-price-ratting mb-20">
                                                 <ul>
                                                     <li>
@@ -1414,33 +1239,13 @@
                                             <div class="modal-product-brief">
                                                 <p>Dịu Dàng Ngày Mới – món quà hoàn hảo để gửi gắm những yêu thương nhẹ nhàng, một lời chúc bình yên dành cho những người ta trân quý nhất.</p>
                                             </div>
-                                            <div class="ltn__product-details-menu-2 product-cart-wishlist-btn mb-30">
-                                                <ul>
-                                                    <li>
-                                                        <div class="cart-plus-minus">
-                                                            <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="theme-btn-1 btn btn-effect-1 d-add-to-cart" title="Thêm vào giỏ" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                                            <span>THÊM VÀO GIỎ</span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn btn-effect-1 d-add-to-wishlist" title="Thêm vào yêu thích" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-                                                            <i class="icon-heart"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                             <div class="ltn__social-media mb-30">
                                                 <ul>
                                                     <li class="d-meta-title">Chia sẻ:</li>
                                                     <li><a href="#" title="Facebook"><i class="icon-social-facebook"></i></a></li>
                                                     <li><a href="#" title="Twitter"><i class="icon-social-twitter"></i></a></li>
                                                     <li><a href="#" title="Pinterest"><i class="icon-social-pinterest"></i></a></li>
-                                                    <li><a href="#" title="Instagram"><i class="icon-social-instagram"></i></a></li>
-                                                    
+                                                    <li><a href="#" title="Instagram"><i class="icon-social-instagram"></i></a></li>   
                                                 </ul>
                                             </div>
                                             <div class="modal-product-meta ltn__product-details-menu-1 mb-30 d-none">
